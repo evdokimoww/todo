@@ -4,10 +4,12 @@ import {Home} from "./pages/Home";
 import {Todos} from "./pages/Todos";
 import {About} from "./pages/About";
 import {Navbar} from "./components/Navbar";
+import {AlertProvider} from "./components/Alert/AlertContext";
 
 function App() {
     return (
         <BrowserRouter>
+            <AlertProvider>
             <Navbar />
             <div className="container pt-4">
                 <Switch>
@@ -16,6 +18,7 @@ function App() {
                     <Route exact path={'/about'}><About /></Route>
                 </Switch>
             </div>
+            </AlertProvider>
         </BrowserRouter>
     );
 }
